@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container{
+            display: flex;
+            border: 1px solid black;
+            max-width: 500px;
+        }
+
+        .item{
+            background-color: chartreuse;
+            margin: 3px;
+            border: 1px solid black;;
+            text-align: center;
+        }
+
+        .shrink-1{
+            flex-shrink: 1;
+        }
+
+        .shrink-2{
+            flex-shrink: 2;
+        }
+
+        .fg-1{
+            flex-grow: 1;
+        }
+    </style>
+    <title>flex-shrink</title>
+</head>
+<body>
+    <section class="container">
+        <div class="item shrink-1 fg-1">AA</div>
+        <div class="item shrink-1">B</div>
+        <div class="item shrink-1">CCC</div>
+        <div class="item shrink-1">DD</div>
+        <div class="item shrink-1 fg-1">WWWWW</div>
+    </section>
+    <br>
+    <section class="container">
+        <div class="item shrink-1 fg-1">AA AA AA AA AA AAAAAAAA </div>
+        <div class="item shrink-1 fg-1">B</div>
+        <div class="item shrink-1 fg-1">CCC</div>
+        <div class="item shrink-1 fg-1">DD</div>
+        <div class="item shrink-1 fg-1">WWW AA WWW AA WWW AA </div>
+    </section>
+    <br>
+    <section class="container">
+        <div class="item shrink-1 fg-1">AA</div>
+        <div class="item shrink-1 fg-1">BB</div>
+        <div class="item shrink-1 fg-1">CCC</div>
+        <div class="item shrink-1 fg-1">DDD</div>
+        <div class="item shrink-1 fg-1">WWW</div>
+    </section>
+</body>
+</html>

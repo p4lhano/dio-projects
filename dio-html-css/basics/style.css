@@ -1,0 +1,11 @@
+
+body {
+    background-image: url("https://images.unsplash.com/photo-1556244573-c3686c0f0e78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80");
+}
+
+h1, h2, h3, p {
+    font-size: 16px;
+    color: white;
+}
+
+/* padding: cima direita baixo esquedo */

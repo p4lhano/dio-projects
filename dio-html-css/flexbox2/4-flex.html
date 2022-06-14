@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container{
+            display: flex;
+            border: 2px solid black;
+            width: 80%;
+            margin: auto;
+        }
+
+        .item{
+            background-color: orange;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .flex-1{
+            flex: 1;
+            /*grow:1 , shrink:1 , basis:0 */
+        }
+    </style>
+    <title>Flex-todos</title>
+</head>
+<body>
+    <section class="container">
+        <div class="item flex-1">AA</div>
+        <div class="item flex-1">AA</div>
+        <div class="item flex-1">AA</div>
+        <div class="item flex-1">AA</div>
+        <div class="item flex-1">AA</div>
+        <div class="item flex-1">AA</div>
+    </section>
+</body>
+</html>

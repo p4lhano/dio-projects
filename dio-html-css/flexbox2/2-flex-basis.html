@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container{
+            display: flex;
+            border: 1px solid black;
+            max-width: 500px;
+        }
+
+        .item{
+            background-color: saddlebrown;
+            color: aqua;
+            text-align: center;
+            margin: 2px;
+        }
+
+        .basis-auto{
+            flex-basis: auto;
+        }
+
+        .basis-0{
+            flex-basis: 0;
+        }
+
+        .fg-1{
+            flex-grow: 1;
+        }
+    </style>
+    <title>flex-basis</title>
+</head>
+<body>
+    <h3>basis-auto & fg-1</h3>
+    <section class="container">
+        <div class="item basis-auto">A</div>
+        <div class="item basis-auto">B</div>
+        <div class="item basis-auto fg-1">C</div>
+        <div class="item basis-auto">D</div>
+    </section>
+    <h3>basis-0 & fg-1</h3>
+    <section class="container">
+        <div class="item basis-0">A</div>
+        <div class="item basis-0">B</div>
+        <div class="item basis-0">C</div>
+        <div class="item basis-0">D</div>
+    </section>
+</body>
+</html>

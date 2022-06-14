@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container{
+            display: flex;
+            border: 2px solid black;
+            max-width: 800px;
+        }
+
+        .item{
+            background-color: teal;
+            margin: 3px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .fg-0{
+            flex-grow: 0;
+        }
+
+        .fg-1{
+            flex-grow: 1;
+        }
+
+        .fg-2{
+            flex-grow: 2;
+        }
+
+        .fg-3{
+            flex-grow: 3;
+        }
+    </style>
+    <title>Flex Grow</title>
+</head>
+<body>
+    <p>fg-0</p>
+    <section class="container">
+        <div class="item fg-0">A</div>
+        <div class="item fg-0">B</div>
+        <div class="item fg-0">C</div>
+        <div class="item fg-0">D</div>
+    </section>
+    <p>fg-2-0-1-0</p>
+    <section class="container">
+        <div class="item fg-2">A</div>
+        <div class="item fg-0">BBBB</div>
+        <div class="item fg-1">C</div>
+        <div class="item fg-2">D</div>
+    </section>
+    <p>fg-2</p>
+    <section class="container">
+        <div class="item fg-2">A</div>
+        <div class="item fg-2">B</div>
+        <div class="item fg-2">C</div>
+        <div class="item fg-2">D</div>
+    </section>
+</body>
+</html>

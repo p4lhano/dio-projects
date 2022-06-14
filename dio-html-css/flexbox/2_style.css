@@ -1,0 +1,37 @@
+
+.flex-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+.flex-item {
+    background: blue;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    color: burlywood;
+    text-align: center;
+    margin: 5px;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    float: left;
+    flex-direction: column;
+}
+
+.column li {
+    background-color: violet;
+    color: blue;
+}
+
+.column-reverse {
+    float: right;
+    flex-direction: column-reverse;
+}

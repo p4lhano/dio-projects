@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        p{text-align: center;}
+
+        .container{
+            display: flex;
+            border: 2px solid black;
+            width: 80%;
+            margin: auto;
+        }
+        
+        .item{
+            background-color: #FFFF00;
+            margin: 3px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .order1{
+            order: 1;
+        }
+
+        .order2{
+            order: 2;
+        }
+
+        .order3{
+            order: 3;
+        }
+    </style>
+    <title>order</title>
+</head>
+<body>
+    <p>order 0</p>
+    <section class="container">
+        <div class="item">AB</div>
+        <div class="item">AB</div>
+        <div class="item">AB</div>
+        <div class="item">AB</div>
+    </section>
+    <p>order 1 - alterando</p>
+    <section class="container">
+        <div class="item">AB</div>
+        <div class="item">AD</div>
+        <div class="item">AC</div>
+        <div class="item">AA</div>
+    </section><br>
+    <section class="container">
+        <div class="item order2">AB</div>
+        <div class="item order3">AD</div>
+        <div class="item order2">AC</div>
+        <div class="item order1">AA</div>
+    </section>
+</body>
+</html>

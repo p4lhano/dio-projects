@@ -1,0 +1,36 @@
+.container{
+    max-width: 400px;
+    border: 1px solid black;
+    display: flex;
+}
+
+.item{
+    background-color: cadetblue;
+    margin: 5px;
+    text-align: center;
+    flex: 1;/* 1 - alinhamento vertical */
+}
+
+.center{
+    align-items: center;
+}
+
+.strech{
+    align-items: stretch;/* de acordo com o maior item o crescimento dos demais */
+}
+
+.flex-start{
+    align-items: flex-start;
+}
+
+.flex-end{
+    align-items: flex-end;
+}
+
+.baseline{
+    align-items: baseline;
+}
+
+div section {
+    flex-direction: column;
+}
