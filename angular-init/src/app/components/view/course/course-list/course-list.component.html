@@ -1,0 +1,64 @@
+
+<!-- Pipes angular, busque mais depois -->
+
+<h2>Cursos</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>NOME</th>
+      <th>CODE</th>
+      <th>DURAÇÃO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of listCourser">
+      <td>{{ c.id }}</td>
+      <td>{{ c.name }}</td>
+      <td>{{ c.code }}</td>
+      <td>{{ c.durationInSemester }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- Tabela com filtro -->
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label">Filter</label>
+  <div class="col-sm-10">
+    <input [(ngModel)]="filter" type="text" class="form-control">
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>NOME</th>
+      <th>CODE</th>
+      <th>DURAÇÃO</th>
+      <th>ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of filtradeCourser">
+      <td>{{ c.id }}</td>
+      <td>{{ c.name }}</td>
+      <td>{{ c.code }}</td>
+      <td>{{ c.durationInSemester }}</td>
+      <td>
+        <a [routerLink]="[ '/cursos/info/' , c.id ]" class="btn btn-primary">Info</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!--
+id?: number,
+  name: string,
+  imageUrl?: string,
+  price: number,
+  code: number,
+  durationInSemester: number -->
