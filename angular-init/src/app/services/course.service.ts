@@ -13,6 +13,10 @@ export class CourseService {
     return COURSERS_TEST ;
   }
 
+  findCourseByIdSync(id: number): Course | undefined {
+    return COURSERS_TEST.find( (c : Course) => c.id === id );
+  }
+
 }
 
 const COURSERS_TEST: Course[] =  [

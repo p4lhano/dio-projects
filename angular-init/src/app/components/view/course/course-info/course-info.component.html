@@ -1,1 +1,70 @@
-<p>Curso ID: {{ id }}</p>
+<h2>Informações do Curso</h2>
+<p>Curso ID: {{ course.id }}</p>
+<p>Curso Name: {{ course.name }}</p>
+
+<!-- Variavel de template -->
+<form #couserForm="ngForm">
+  <p>Curso ID: {{ course.id }}</p>
+  <!-- NOME -->
+  <div class="form-group row">
+    <label for="" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <!-- #couseName="ngModel" para atribuir o conteudo para esta var -->
+      <input [(ngModel)]="course.name" required name="name" #couseName="ngModel" [ngClass]="{'is-invalid': couseName.invalid}" class="form-control" type="text">
+      <!-- Só ira add a class do ngClass casso a variavel de template couseName.invalid seja true -->
+      <!-- <p> Valido: {{ couseName.valid }}</p>
+      <p> Invalido: {{ couseName.invalid }}</p> -->
+      <div class="invalid-feedback">
+        <span>Informe o nome!!</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ImagemURL -->
+  <div class="form-group row">
+    <label for="" class="col-sm-2 col-form-label">Imgaem URL</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="course.imageUrl" name="imageUrl" #couseName="ngModel" class="form-control" type="text">
+    </div>
+  </div>
+
+  <!-- Preço -->
+  <div class="form-group row">
+    <label for="" class="col-sm-2 col-form-label">Preço</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="course.price" required name="price" #cousePrice="ngModel" [ngClass]="{'is-invalid': cousePrice.invalid}" class="form-control" type="number">
+      <div class="invalid-feedback">
+        <span>Informe o preço!!</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Código -->
+  <div class="form-group column">
+    <label for="" class="col-sm-2 col-form-label">Código</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="course.code" required name="code" #couseCode="ngModel" [ngClass]="{'is-invalid': couseCode.invalid}" class="form-control" type="number">
+      <div class="invalid-feedback">
+        <span>Informe o código!!</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Duração    11:24  -->
+  <div class="form-group row">
+    <label for="durationInSemester" class="col-sm-2 col-form-label">Código</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="course.durationInSemester" required name="durationInSemester" #couseDurationInSemester="ngModel" [ngClass]="{'is-invalid': couseDurationInSemester.invalid}" class="form-control" type="number">
+      <div class="invalid-feedback">
+        <span>Informe o código!!</span>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+</form>
