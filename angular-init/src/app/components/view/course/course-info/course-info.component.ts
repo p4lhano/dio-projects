@@ -26,8 +26,8 @@ export class CourseInfoComponent implements OnInit {
     //   this.id = Number( paramentroRecebido )
     // } );
     const x = this.service.findCourseByIdSync( Number( this.rotaActive.snapshot.paramMap.get('id') ) );
-    if (x === undefined){
-      throw new TypeError("Não encontrato ID informado");
+    if ( !x ){
+      throw new TypeError(`Não encontrato ID informado: ${ this.rotaActive.snapshot.paramMap.get('id') }`);
     } else {
       this.course = x;
     }

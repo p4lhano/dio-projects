@@ -16,8 +16,17 @@ export class CourseListComponent implements OnInit {
   constructor(private service: CourseService) { }
 
   ngOnInit(): void {
-    this.listCourser = this.service.listAllCoursesSync();
-    this.filtradeCourser = this.listCourser;
+    console.clear();
+    console.log("Start: CourseListComponent");
+    this.service.listAllCoursesAsync().subscribe({
+      next: courseReturn => {
+        this.listCourser = courseReturn
+        this.filtradeCourser = this.listCourser;
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
   }
 
   set filter(value:string) {

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Course } from '../models/course';
@@ -7,10 +8,13 @@ import { Course } from '../models/course';
 })
 export class CourseService {
 
-  constructor() { }
+  private BASE_URL: string = "http://localhost:3100/api" + "/courses";
 
-  listAllCoursesSync(): Course[] {
-    return COURSERS_TEST ;
+  constructor(private httpClient: HttpClient) { }
+
+  listAllCoursesAsync(): Observable<Course[]> {
+    return this.httpClient.get<Course[]>(this.BASE_URL);
+    // return COURSERS_TEST ;
   }
 
   findCourseByIdSync(id: number): Course | undefined {
