@@ -25,14 +25,38 @@ export class CourseInfoComponent implements OnInit {
     // this.rotaActive.params.subscribe((paramentroRecebido) => {
     //   this.id = Number( paramentroRecebido )
     // } );
-    const x = this.service.findCourseByIdSync( Number( this.rotaActive.snapshot.paramMap.get('id') ) );
+    /*
+    const x = this.service.findCourseByIdAsync( Number( this.rotaActive.snapshot.paramMap.get('id') ) );
     if ( !x ){
       throw new TypeError(`Não encontrato ID informado: ${ this.rotaActive.snapshot.paramMap.get('id') }`);
     } else {
       this.course = x;
     }
+    */
+    this.service.findCourseByIdAsync( Number( this.rotaActive.snapshot.paramMap.get('id') ) )?.subscribe({
+      next: courseReturn => {
+        if ( !courseReturn ){
+          throw new TypeError(`Não encontrato ID informado: ${ this.rotaActive.snapshot.paramMap.get('id') }`);
+        } else {
+          this.course = courseReturn;
+        }
+      },
+      error: err => {
+        console.log(err);
 
+      }
+    });
+  }
 
+  save(): void {
+    this.service.saveCourseAsync(this.course).subscribe({
+      next: course => {
+        this.course = course;
+      },
+      error: err => {
+        console.error(err);
+      }
+    });
   }
 
 }

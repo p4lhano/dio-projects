@@ -21,6 +21,17 @@ export class CourseService {
     return COURSERS_TEST.find( (c : Course) => c.id === id );
   }
 
+  findCourseByIdAsync(id: number): Observable<Course> | undefined {
+    return this.httpClient.get<Course>(this.BASE_URL + `/${id}`);
+  }
+
+  saveCourseAsync(course: Course) {
+    if (course.id) {
+      return this.httpClient.put<Course>(`${this.BASE_URL}/${course.id}`,course);
+    }
+    return this.httpClient.post<Course>(`${this.BASE_URL}`,course);
+  }
+
 }
 
 const COURSERS_TEST: Course[] =  [
