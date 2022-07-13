@@ -17,6 +17,12 @@ export class CourseListComponent implements OnInit {
 
   ngOnInit(): void {
     console.clear();
+
+    this.buscador();
+
+  }
+
+  buscador():void{
     console.log("Start: CourseListComponent");
     this.service.listAllCoursesAsync().subscribe({
       next: courseReturn => {
@@ -25,6 +31,20 @@ export class CourseListComponent implements OnInit {
       },
       error: error => {
         console.log(error);
+      }
+    });
+  }
+
+  deleteByID(courseId: number):void{
+    this.service.deleteByIdAsync(courseId).subscribe({
+      next: () => {
+        console.log('deletado');
+
+        this.buscador();
+
+      },
+      error: err => {
+        console.log(err);
       }
     });
   }

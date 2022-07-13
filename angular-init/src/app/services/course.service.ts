@@ -32,6 +32,10 @@ export class CourseService {
     return this.httpClient.post<Course>(`${this.BASE_URL}`,course);
   }
 
+  deleteByIdAsync(id: Number): Observable<any>{
+    return this.httpClient.delete<any>(`${this.BASE_URL}/${id}`);
+  }
+
 }
 
 const COURSERS_TEST: Course[] =  [

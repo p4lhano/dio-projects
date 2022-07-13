@@ -49,7 +49,7 @@ app.route('/api/courses/:id').get((request, response) => {
 });
 
 app.route('/api/courses/:id').delete((request, response)=> {
-  const courseId = +request.params['id'];
+  const courseId = Number( request.params['id'] );
   COURSERS_TEST = COURSERS_TEST.filter(courseIterator => courseIterator.id !== courseId);
   
   response.status(204).send({});
@@ -112,7 +112,7 @@ app.route('/api/courses/:id').delete((request, response)=> {
 //         imageUrl: '/assets/images/animations.png',
 //     }
 // ];
-const COURSERS_TEST =  [
+var COURSERS_TEST =  [
     {
       id: 1,
       name: "ADS",

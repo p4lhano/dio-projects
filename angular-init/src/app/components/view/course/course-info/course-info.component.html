@@ -1,10 +1,10 @@
 <h2>Informações do Curso</h2>
-<p>Curso ID: {{ course.id }}</p>
-<p>Curso Name: {{ course.name }}</p>
+<!-- <p>Curso ID: {{ course.id! }}</p> -->
+<!-- <p>Curso Name: {{ course.name }}</p> -->
 
 <!-- Variavel de template -->
 <form #couserForm="ngForm">
-  <p>Curso ID: {{ course.id }}</p>
+  <!-- <p>Curso ID: {{ course.id }}</p> -->
   <!-- NOME -->
   <div class="form-group row">
     <label for="" class="col-sm-2 col-form-label">Name</label>
@@ -61,10 +61,8 @@
     </div>
   </div>
 
-
-
-
-
+  <button [disabled]="couserForm.invalid" (click)="save()" class="btn btn-primary mr-2">Save</button>
+  <button [routerLink]="['/']" class="btn btn-secondary">Back</button>
 
 
 </form>
