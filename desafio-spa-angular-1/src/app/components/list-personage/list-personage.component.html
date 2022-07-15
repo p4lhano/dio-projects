@@ -1,0 +1,8 @@
+<div>
+    <mat-card *ngFor="let persona of personagens">
+        <img mat-card-image [src]="persona.image" alt="Avatar Personagem">
+        <mat-card-title>{{persona.name}}</mat-card-title>
+        <mat-card-content>{{persona.species}}</mat-card-content>
+        <mat-card-content>{{persona.status}}</mat-card-content>
+    </mat-card>
+</div>

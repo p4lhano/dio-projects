@@ -13,13 +13,18 @@ import { ToolBarComponent } from './core/tool-bar/tool-bar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { ListPersonageComponent } from './components/list-personage/list-personage.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     Error404Component,
-    ToolBarComponent
+    ToolBarComponent,
+    ListPersonageComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

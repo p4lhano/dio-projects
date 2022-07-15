@@ -1,0 +1,9 @@
+mat-card{
+    max-width: 200px;
+    margin: 30px;
+}
+
+div{
+    display: flex;
+    flex-wrap: wrap;
+}
