@@ -1,6 +1,6 @@
 package br.com.example.cloudSpring.services;
 
-import java.util.Arrays;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import br.com.example.cloudSpring.controllers.dto.ParkingDTO;
+import br.com.example.cloudSpring.exception.NotFondException;
 import br.com.example.cloudSpring.models.Parking;
 
 @Service
@@ -31,6 +33,22 @@ public class ParkingService {
 	
 	public List<Parking> getAll() {
 		return parkingMap.values().stream().collect(Collectors.toList());
+	}
+
+	public Parking findById(String id) {
+		Parking park = parkingMap.get(id);
+		if (park == null) 
+			throw new NotFondException(id);
+		return park;
+	}
+
+	public Parking create(Parking newParking) {
+		newParking.setId(getUUID());
+		newParking.setEntryDate(LocalDateTime.now());
+		
+		parkingMap.put(newParking.getId(), newParking);
+		
+		return parkingMap.get(newParking.getId());
 	}
 	
 }

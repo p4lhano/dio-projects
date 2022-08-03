@@ -2,6 +2,7 @@ package br.com.example.cloudSpring.controllers.dto;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -12,7 +13,9 @@ public class ParkingDTO {
 	private String state;
 	private String model;
 	private String color;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime entryDate;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime exitDate;
 	private Double bill;
 	

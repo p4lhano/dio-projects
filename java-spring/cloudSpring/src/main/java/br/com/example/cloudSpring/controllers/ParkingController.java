@@ -1,14 +1,18 @@
 package br.com.example.cloudSpring.controllers;
 
+import java.net.URI;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.example.cloudSpring.controllers.dto.ParkingCreateDTO;
 import br.com.example.cloudSpring.controllers.dto.ParkingDTO;
 import br.com.example.cloudSpring.controllers.mappers.ParkingMapper;
 import br.com.example.cloudSpring.models.Parking;
@@ -40,8 +44,21 @@ public class ParkingController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<ParkingDTO> getById(@PathVariable String id) {
-		System.out.println("Solicitou id:"+id);
+		Parking parking = parkingService.findById(id);
 		
-		return ResponseEntity.ok(null);
+		return ResponseEntity.ok(parkingMapper.toParkingDTO(parking));
+	}
+	
+	@PostMapping
+	public ResponseEntity<ParkingDTO> create(@RequestBody ParkingCreateDTO createObj) {
+		Parking parking = parkingMapper.toParking(createObj);
+		parkingService.create(parking);
+//		return URI.create("parking/" + parking.getId()); // add return URI
+		return ResponseEntity.status(HttpStatus.CREATED).body(parkingMapper.toParkingDTO(parking));
 	}
 }
+
+
+
+
+
