@@ -50,5 +50,10 @@ public class ParkingService {
 		
 		return parkingMap.get(newParking.getId());
 	}
+
+	public void delete(String id) {
+		Parking p =  findById(id);
+		parkingMap.remove(p.getId());
+	}
 	
 }

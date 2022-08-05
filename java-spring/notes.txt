@@ -1,2 +1,28 @@
 add a linha abaixo no ~/.bashrc no user para rodar o Maven
 export PATH=/opt/apache-maven-3.8.5/bin:$PATH
+
+
+links para finalização - Cloud
+https://www.youtube.com/embed/gEzDk9l0hv8
+https://www.youtube.com/watch?v=smQHZQpAxvM
+https://www.youtube.com/watch?v=GSUg0bpl_ac
+https://www.youtube.com/watch?v=Ya6NnPWQZPk
+https://www.youtube.com/watch?v=OidbLR-kb7o
+https://www.youtube.com/watch?v=AB_7S237leY
+https://www.youtube.com/watch?v=ZDzjriFju00
+https://www.youtube.com/watch?v=ZHMBXlhoeYc
+https://www.youtube.com/watch?v=ysFQhMKgN-g
+https://www.youtube.com/watch?v=feN7WNg1tEc
+https://www.youtube.com/watch?v=Eu9Yyel7Bxo
+https://www.youtube.com/watch?v=t3hXckLncZo
+
+
+Links segurança
+https://www.youtube.com/watch?v=ywvgknr1R5c
+https://www.youtube.com/watch?v=DBhfa7f01Pg
+https://www.youtube.com/watch?v=PC0AyWWnTbo
+https://www.youtube.com/watch?v=EUHCoFgo5Uo
+https://www.youtube.com/watch?v=-btfBUViqGk
+https://www.youtube.com/watch?v=hjRGs5RD4yI
+https://www.youtube.com/watch?v=50GQcxa2RNg
+https://www.youtube.com/watch?v=XJmv8mKrVA8
